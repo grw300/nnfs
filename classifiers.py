@@ -1,8 +1,8 @@
 from activation import SoftmaxActivation
 from loss import CategoricalCrossEntropyLoss
 
-class SoftmaxClassifier():
 
+class SoftmaxClassifier:
     def __init__(self):
         self.activation = SoftmaxActivation()
         self.loss = CategoricalCrossEntropyLoss()
@@ -11,7 +11,6 @@ class SoftmaxClassifier():
         self.activation.forward(inputs)
         self.output = self.activation.output
         return self.loss.calculate(self.output, y_true)
-
 
     def backward(self, dvalues, y_true):
         samples = len(dvalues)
